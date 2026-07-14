@@ -32,7 +32,7 @@ export default function BottomNavigation() {
   const location = useLocation();
   const navigate = useNavigate();
   return (
-    <nav className="fixed bottom-0 left-1/2 z-50 w-full max-w-md -translate-x-1/2">
+    <nav className="fixed bottom-0 left-1/2 z-50 w-full max-w-md -translate-x-1/2 ">
       <div className="flex items-center justify-around rounded-t-lg border border-slate-200 bg-white/90 px-2 py-1 shadow-xl backdrop-blur-xl">
         {menus.map((menu) => {
           const Icon = menu.icon;

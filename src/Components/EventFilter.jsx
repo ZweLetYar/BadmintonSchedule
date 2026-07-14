@@ -34,7 +34,7 @@ const events = [
 ];
 export default function EventFilter({ activeEvent, setActiveEvent }) {
   return (
-    <div className="px-1 py-3 flex items-center justify-center gap-2">
+    <div className=" flex items-center justify-center gap-2 ">
       <div className="flex gap-2 overflow-x-auto scrollbar-hide">
         {events.map((event) => {
           const Icon = event.icon;

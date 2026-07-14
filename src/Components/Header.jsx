@@ -1,8 +1,9 @@
 import { useState } from "react";
 import DayTabs from "./DayTabs";
+import { getTodayTournamentDay } from "../tournamentDays";
 
 export default function Header() {
-  const [activeDay, setActiveDay] = useState(1);
+  const [activeDay, setActiveDay] = useState(getTodayTournamentDay());
   return (
     <header className="relative  rounded-b-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-blue-900 px-5 pt-8 pb-2 ">
       {/* Background Glow */}

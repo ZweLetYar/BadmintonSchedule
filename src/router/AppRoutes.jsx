@@ -21,6 +21,10 @@ import PeriodCalendar from "../pages/MainApp/PeriodCalender";
 import BlogDetail from "../pages/MainApp/BlogDetail";
 import DailyNotes from "../pages/MainApp/DailyNotes";
 import BlogList from "../Components/BlogList";
+import CreatePlayer from "../pages/MainApp/CreatePlayer";
+import CreateTeam from "../pages/MainApp/CreateTeam";
+import CreateGroup from "../pages/MainApp/CreateGroup";
+import CreateMatch from "../pages/MainApp/CreateMatch";
 
 export default function AppRoutes() {
   let { user } = useContext(AuthContext);
@@ -63,6 +67,10 @@ export default function AppRoutes() {
           element={<ReproductiveDisorder />}
         />
         <Route path="/aboutsleep" element={<AboutSleep />} />
+        <Route path="/createplayer" element={<CreatePlayer />} />
+        <Route path="/createteam" element={<CreateTeam />} />
+        <Route path="/creategroup" element={<CreateGroup />} />
+        <Route path="/creatematch" element={<CreateMatch />} />
 
         {/*<Route path="/Search" element={<Search />} />
         <Route path="/books/:id" element={<BookDetails />} /> */}

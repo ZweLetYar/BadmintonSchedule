@@ -5,15 +5,18 @@ import { FormProvider } from "./Context/FormContext.jsx";
 import { AuthContextProvider } from "./Context/AuthContext.jsx";
 import { ThemeContextProvider } from "./Context/ThemeContext.jsx";
 import { CycleContextProvider } from "./Context/CycleContext.jsx";
+import { DayProvider } from "./Context/DayContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <AuthContextProvider>
     <FormProvider>
       <ThemeContextProvider>
         <CycleContextProvider>
-          <App />
+          <DayProvider>
+            <App />
+          </DayProvider>
         </CycleContextProvider>
       </ThemeContextProvider>
     </FormProvider>
-  </AuthContextProvider>
+  </AuthContextProvider>,
 );
