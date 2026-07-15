@@ -1,12 +1,13 @@
-import React from "react";
+import { useState } from "react";
+import Header from "../../Components/Header";
 import SchedulePage from "../../Components/SchedulePage";
+import { getTodayTournamentDay } from "../../tournamentDays";
 
 function Home() {
-  return (
-    <div>
-      <SchedulePage activeDay={1} activeEvent={"all"} />
-    </div>
-  );
+  const [activeDay, setActiveDay] = useState(getTodayTournamentDay());
+  const [activeEvent, setActiveEvent] = useState("all");
+
+  return <></>;
 }
 
 export default Home;

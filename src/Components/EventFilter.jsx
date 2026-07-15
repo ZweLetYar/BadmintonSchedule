@@ -42,7 +42,9 @@ export default function EventFilter({ activeEvent, setActiveEvent }) {
           return (
             <button
               key={event.id}
-              onClick={() => setActiveEvent(event.id)}
+              onClick={() => {
+                setActiveEvent(event.id);
+              }}
               className={`
         whitespace-nowrap
         rounded-full

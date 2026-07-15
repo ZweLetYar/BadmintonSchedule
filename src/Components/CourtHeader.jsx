@@ -2,7 +2,7 @@ import { Clock3, Columns4 } from "lucide-react";
 
 export default function CourtHeader({ court, startTime }) {
   return (
-    <div className="flex items-center justify-between px-1">
+    <div className="flex items-center justify-between px-1 mt-2">
       <div className="flex items-center gap-1">
         <div className="flex h-7 w-7 items-center justify-center rounded-xl bg-blue-600">
           <Columns4 size={15} className="text-white" />

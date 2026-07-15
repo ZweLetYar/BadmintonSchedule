@@ -25,6 +25,7 @@ import CreatePlayer from "../pages/MainApp/CreatePlayer";
 import CreateTeam from "../pages/MainApp/CreateTeam";
 import CreateGroup from "../pages/MainApp/CreateGroup";
 import CreateMatch from "../pages/MainApp/CreateMatch";
+import AdminViewMatches from "../pages/MainApp/AdminViewMatches";
 
 export default function AppRoutes() {
   let { user } = useContext(AuthContext);
@@ -71,6 +72,7 @@ export default function AppRoutes() {
         <Route path="/createteam" element={<CreateTeam />} />
         <Route path="/creategroup" element={<CreateGroup />} />
         <Route path="/creatematch" element={<CreateMatch />} />
+        <Route path="/admin/view-matches" element={<AdminViewMatches />} />
 
         {/*<Route path="/Search" element={<Search />} />
         <Route path="/books/:id" element={<BookDetails />} /> */}
