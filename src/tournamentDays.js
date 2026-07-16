@@ -1,6 +1,6 @@
-const tournamentStart = new Date("2026-07-20");
+const tournamentStart = new Date("2026-07-16");
 
-export const days = Array.from({ length: 7 }, (_, index) => {
+export const days = Array.from({ length: 11 }, (_, index) => {
   const date = new Date(tournamentStart);
   date.setDate(tournamentStart.getDate() + index);
 

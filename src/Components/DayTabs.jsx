@@ -1,15 +1,15 @@
 import { useEffect, useRef } from "react";
 import "../App.css";
 
-const tournamentStart = new Date("2026-07-20");
+const tournamentStart = new Date("2026-07-16");
 
-const days = Array.from({ length: 7 }, (_, index) => {
+const days = Array.from({ length: 11 }, (_, index) => {
   const date = new Date(tournamentStart);
   date.setDate(tournamentStart.getDate() + index);
 
   return {
     id: index + 1,
-    label: index === 6 ? "Final" : `Day ${index + 1}`,
+    label: index === 10 ? "Final" : `Day ${index + 1}`,
     date: date.toLocaleDateString("en-US", {
       month: "short",
       day: "numeric",

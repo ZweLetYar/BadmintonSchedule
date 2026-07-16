@@ -33,41 +33,7 @@ export default function AppRoutes() {
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/bloglist/:id"
-          element={!!user ? <BlogDetail /> : <LogIn />}
-        />
-        <Route path="/bloglist" element={!!user ? <BlogList /> : <LogIn />} />
-        <Route
-          path="/dailynotes"
-          element={!!user ? <DailyNotes /> : <LogIn />}
-        />
-        <Route
-          path="/periodcalender"
-          element={!!user ? <PeriodCalendar /> : <LogIn />}
-        />
-        <Route
-          path="/logsymptoms"
-          element={!!user ? <LogSymptoms /> : <LogIn />}
-        />
-        <Route path="/symptoms" element={!!user ? <Symptoms /> : <LogIn />} />
-        <Route
-          path="/logperiodform"
-          element={!!user ? <LogPeriodForm /> : <LogIn />}
-        />
-        <Route path="/login" element={!user ? <LogIn /> : <Home />} />
-        <Route path="/register" element={!user ? <Register /> : <Home />} />
-        <Route path="/naming" element={<Naming />} />
-        <Route path="/periodlength" element={<PeriodLength />} />
-        <Route path="/circlelength" element={<CircleLength />} />
-        <Route path="/regularornot" element={<RegularOrNot />} />
-        <Route path="/discomfort" element={<Discomfort />} />
-        <Route path="/lastperioddate" element={<LastPeriodDate />} />
-        <Route
-          path="/reproductivedisorder"
-          element={<ReproductiveDisorder />}
-        />
-        <Route path="/aboutsleep" element={<AboutSleep />} />
+
         <Route path="/createplayer" element={<CreatePlayer />} />
         <Route path="/createteam" element={<CreateTeam />} />
         <Route path="/creategroup" element={<CreateGroup />} />

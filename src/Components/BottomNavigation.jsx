@@ -12,7 +12,7 @@ const menus = [
     id: "results",
     label: "Results",
     icon: Trophy,
-    path: "/bloglist",
+    path: "/results",
   },
   {
     id: "draw",

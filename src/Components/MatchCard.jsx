@@ -118,9 +118,7 @@ export default function MatchCard({ match, playerMap = {} }) {
               {stage.replaceAll("_", " ")}
             </span>
 
-            {group && (
-              <span className="text-xs text-slate-500">Group {group}</span>
-            )}
+            {group && <span className="text-xs text-slate-500">{group}</span>}
           </div>
 
           <Status status={status} />
