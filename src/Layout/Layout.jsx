@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Header from "../Components/Header";
 import InnerNavbar from "../Components/InnerNavbar";
 import { AuthContext } from "../Context/AuthContext";
@@ -11,14 +11,16 @@ import BottomNavigation from "../Components/BottomNavigation";
 import EventFilter from "../Components/EventFilter";
 import { getTodayTournamentDay } from "../tournamentDays";
 import SchedulePage from "../Components/SchedulePage";
+import Result from "../pages/MainApp/Result";
 
 export default function Layout({ children }) {
   let location = useLocation();
   const isHomePage = location.pathname === "/";
-  const path = window.location.pathname;
-  const isAdmin = path.startsWith("/admin");
+  const isResultPage = location.pathname === "/results";
+  const isAdmin = location.pathname.startsWith("/admin/view-matches");
+
   const [activeDay, setActiveDay] = useState(getTodayTournamentDay());
-  const [activeEvent, setActiveEvent] = useState("all");
+  const [activeEvent, setActiveEvent] = useState("All");
 
   return (
     <div className="overflow-x-hidden">
@@ -30,17 +32,23 @@ export default function Layout({ children }) {
           setActiveEvent={setActiveEvent}
         />
       </div>
-
       {isHomePage || isAdmin ? (
-        <SchedulePage activeDay={activeDay} activeEvent={activeEvent} />
+        <SchedulePage
+          activeDay={activeDay}
+          activeEvent={activeEvent}
+          setActiveEvent={setActiveEvent}
+        />
       ) : null}
+
+      {isResultPage && (
+        <Result activeEvent={activeEvent} setActiveEvent={setActiveEvent} />
+      )}
 
       <SwitchTransition>
         <CSSTransition timeout={200} classNames="fade" key={location.pathname}>
           <main>{children}</main>
         </CSSTransition>
       </SwitchTransition>
-
       <div className="mt-10">
         <BottomNavigation />
       </div>

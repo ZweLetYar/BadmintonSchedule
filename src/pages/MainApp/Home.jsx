@@ -5,7 +5,6 @@ import { getTodayTournamentDay } from "../../tournamentDays";
 
 function Home() {
   const [activeDay, setActiveDay] = useState(getTodayTournamentDay());
-  const [activeEvent, setActiveEvent] = useState("all");
 
   return <></>;
 }

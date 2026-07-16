@@ -1,91 +1,16 @@
-// import { useMemo } from "react";
-// import CourtSection from "./CourtSection";
-// import { useGetCollection } from "../hooks/useFireStore";
-
-// export default function SchedulePage({ activeDay, activeEvent }) {
-//   const { data: matches, loading, error } = useGetCollection("matches");
-
-//   // Filter by day & event
-//   const filteredMatches = useMemo(() => {
-//     return matches.filter((match) => {
-//       const dayMatch = Number(match.day) === Number(activeDay);
-
-//       const eventMatch =
-//         activeEvent === "all"
-//           ? true
-//           : match.event.toLowerCase() === activeEvent;
-
-//       return dayMatch && eventMatch;
-//     });
-//   }, [matches, activeDay, activeEvent]);
-
-//   // Group matches by court
-//   const courts = useMemo(() => {
-//     const grouped = {};
-
-//     filteredMatches.forEach((match) => {
-//       const court = match.court;
-
-//       if (!grouped[court]) {
-//         grouped[court] = [];
-//       }
-
-//       grouped[court].push(match);
-//     });
-
-//     // Sort by time
-//     Object.values(grouped).forEach((list) => {
-//       list.sort((a, b) => (a.time || "").localeCompare(b.time || ""));
-//     });
-
-//     return grouped;
-//   }, [filteredMatches]);
-
-//   if (loading) {
-//     return (
-//       <div className="flex h-60 items-center justify-center">
-//         <p className="text-slate-500">Loading matches...</p>
-//       </div>
-//     );
-//   }
-
-//   if (error) {
-//     return (
-//       <div className="flex h-60 items-center justify-center">
-//         <p className="text-red-500">{error}</p>
-//       </div>
-//     );
-//   }
-
-//   if (filteredMatches.length === 0) {
-//     return (
-//       <div className="flex h-60 items-center justify-center">
-//         <p className="text-slate-500">No matches scheduled.</p>
-//       </div>
-//     );
-//   }
-
-//   return (
-//     <div className="space-y-5 pb-24">
-//       {Object.keys(courts)
-//         .sort((a, b) => Number(a) - Number(b))
-//         .map((court) => (
-//           <CourtSection
-//             key={court}
-//             court={`COURT ${court}`}
-//             startTime={courts[court][0]?.time}
-//             matches={courts[court]}
-//           />
-//         ))}
-//     </div>
-//   );
-// }
-
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
 import CourtSection from "./CourtSection";
 import { useGetCollection } from "../hooks/useFireStore";
 
-export default function SchedulePage({ activeDay, activeEvent }) {
+export default function SchedulePage({
+  activeDay,
+  activeEvent,
+  setActiveEvent,
+}) {
+  useEffect(() => {
+    setActiveEvent("All");
+  }, []);
+
   const {
     data: matches,
     loading: matchesLoading,
@@ -116,9 +41,7 @@ export default function SchedulePage({ activeDay, activeEvent }) {
       const dayMatch = Number(match.day) === Number(activeDay);
 
       const eventMatch =
-        activeEvent === "all"
-          ? true
-          : match.event.toLowerCase() === activeEvent;
+        activeEvent === "All" ? true : match.event === activeEvent;
 
       return dayMatch && eventMatch;
     });

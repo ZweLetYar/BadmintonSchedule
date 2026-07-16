@@ -1,4 +1,5 @@
 import { Trophy, Venus, Users, Mars } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
 const events = [
   {
@@ -38,12 +39,14 @@ export default function EventFilter({ activeEvent, setActiveEvent }) {
       <div className="flex gap-2 overflow-x-auto scrollbar-hide">
         {events.map((event) => {
           const Icon = event.icon;
-
+          let location = useLocation();
+          const isStanding = location.pathname === "/results";
+          if (isStanding && event.id === "all") return null;
           return (
             <button
               key={event.id}
               onClick={() => {
-                setActiveEvent(event.id);
+                setActiveEvent(event.label);
               }}
               className={`
         whitespace-nowrap
@@ -58,8 +61,8 @@ export default function EventFilter({ activeEvent, setActiveEvent }) {
         showdown-md
 
         ${
-          activeEvent === event.id
-            ? getActiveStyle(event.id)
+          activeEvent === event.label
+            ? getActiveStyle(event.label)
             : "bg-white border border-slate-200 text-slate-700 hover:border-blue-300"
         }
       `}
@@ -67,7 +70,7 @@ export default function EventFilter({ activeEvent, setActiveEvent }) {
               <Icon
                 size={15}
                 className={
-                  activeEvent === event.id ? "text-white" : event.iconColor
+                  activeEvent === event.label ? "text-white" : event.iconColor
                 }
               />
               <span>{event.label}</span>
@@ -81,16 +84,16 @@ export default function EventFilter({ activeEvent, setActiveEvent }) {
 
 function getActiveStyle(event) {
   switch (event) {
-    case "ms":
+    case "MS":
       return "bg-blue-600 text-white shadow-md";
 
-    case "md":
+    case "MD":
       return "bg-cyan-500 text-white shadow-md";
 
-    case "ws":
+    case "WS":
       return "bg-pink-500 text-white shadow-md";
 
-    case "wd":
+    case "WD":
       return "bg-violet-500 text-white shadow-md";
 
     default:
