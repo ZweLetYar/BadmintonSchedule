@@ -50,15 +50,16 @@ export default function EventFilter({ activeEvent, setActiveEvent }) {
               }}
               className={`
         whitespace-nowrap
-        rounded-full
+        rounded-xl
         px-2
         py-1
-        text-xxs
+        text-xs
         font-semibold
         transition-all
         duration-200
         flex items-center gap-1.5
         showdown-md
+        
 
         ${
           activeEvent === event.label

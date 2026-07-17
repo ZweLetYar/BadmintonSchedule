@@ -42,7 +42,7 @@ export default function DayTabs({ activeDay, setActiveDay }) {
   }, [activeDay]);
 
   return (
-    <div className="sticky top-0 z-30 backdrop-blur-xl">
+    <div className="sticky top-0 z-30 ">
       <div ref={containerRef} className="overflow-x-auto scrollbar-hide">
         <div className="flex gap-1 px-1 py-1 w-max">
           {days.map((day, index) => (

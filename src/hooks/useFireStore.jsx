@@ -27,7 +27,7 @@ export function useGetCollection(collectionName, _q) {
     if (qRef) {
       queries.push(where(...qRef));
     }
-    queries.push(orderBy("date", "desc"));
+    queries.push(orderBy("date", "asc"));
 
     const q = query(ref, ...queries);
 

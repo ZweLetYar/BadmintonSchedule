@@ -1,6 +1,7 @@
 import { useMemo, useEffect } from "react";
 import CourtSection from "./CourtSection";
 import { useGetCollection } from "../hooks/useFireStore";
+import Loading from "./Loading";
 
 export default function SchedulePage({
   activeDay,
@@ -69,7 +70,7 @@ export default function SchedulePage({
   if (matchesLoading || playersLoading) {
     return (
       <div className="flex h-60 items-center justify-center">
-        <p className="text-slate-500">Loading matches...</p>
+        <Loading />
       </div>
     );
   }
