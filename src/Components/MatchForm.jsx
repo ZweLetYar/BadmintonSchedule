@@ -1,6 +1,7 @@
 const STAGES = [
   { value: "group", label: "Group Stage" },
   { value: "knockout", label: "Knockout" },
+  { value: "R16", label: "R16" },
   { value: "quarter_final", label: "Quarter Final" },
   { value: "semi_final", label: "Semi Final" },
   { value: "upper_final", label: "Upper Final" },
@@ -39,7 +40,11 @@ export default function MatchForm({ form, handleChange }) {
             <option value={4}>Day 4</option>
             <option value={5}>Day 5</option>
             <option value={6}>Day 6</option>
-            <option value={7}>Final Day</option>
+            <option value={7}>Day 7</option>
+            <option value={8}>Day 8</option>
+            <option value={9}>Day 9</option>
+            <option value={10}>Day 10</option>
+            <option value={11}>Final</option>
           </select>
         </div>
 

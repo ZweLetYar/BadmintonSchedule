@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Layout from "../Layout/Layout";
@@ -13,6 +13,7 @@ import CreateMatch from "../pages/Admin/CreateMatch";
 import AdminViewMatches from "../pages/Admin/AdminViewMatches";
 
 import Players from "../pages/MainApp/Players";
+import Draw from "../pages/MainApp/Draw";
 
 export default function AppRoutes() {
   let { user } = useContext(AuthContext);
@@ -22,13 +23,14 @@ export default function AppRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/results" element={<Home />} />
+        <Route path="/draw" element={<Home />} />
         <Route path="/players" element={<Players />} />
 
-        <Route path="/admin/createplayer" element={<CreatePlayer />} />
-        <Route path="/admin/createteam" element={<CreateTeam />} />
-        <Route path="/admin/creategroup" element={<CreateGroup />} />
-        <Route path="/admin/creatematch" element={<CreateMatch />} />
-        <Route path="/admin/view-matches" element={<AdminViewMatches />} />
+        <Route path="/serious/createplayer" element={<CreatePlayer />} />
+        <Route path="/serious/createteam" element={<CreateTeam />} />
+        <Route path="/serious/creategroup" element={<CreateGroup />} />
+        <Route path="/serious/creatematch" element={<CreateMatch />} />
+        <Route path="/serious/view-matches" element={<AdminViewMatches />} />
 
         {/*<Route path="/Search" element={<Search />} />
         <Route path="/books/:id" element={<BookDetails />} /> */}

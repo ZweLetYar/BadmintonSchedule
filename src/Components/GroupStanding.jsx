@@ -25,6 +25,7 @@ export default function GroupStanding({ event, group, standings = [] }) {
               <th className="px-1 py-1.5 text-center">W</th>
               <th className="px-1 py-1.5 text-center">L</th>
               <th className="px-1 py-1.5 text-center">Pts</th>
+              <th className="px-1 py-1.5 text-center">PD</th>
             </tr>
           </thead>
 
@@ -71,6 +72,17 @@ export default function GroupStanding({ event, group, standings = [] }) {
                 </td>
                 <td className="px-1 text-center font-bold text-blue-600">
                   {player.points}
+                </td>
+                <td
+                  className={`px-1 text-center font-semibold ${
+                    player.pd > 0
+                      ? "text-green-600"
+                      : player.pd < 0
+                        ? "text-red-500"
+                        : "text-slate-500"
+                  }`}
+                >
+                  {player.pd > 0 ? `+${player.pd}` : player.pd}
                 </td>
               </tr>
             ))}

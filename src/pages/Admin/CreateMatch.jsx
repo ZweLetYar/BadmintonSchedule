@@ -16,6 +16,7 @@ export default function CreateMatch() {
   const [form, setForm] = useState({
     day: 1,
     court: 1,
+    matchNumber: 1,
 
     event: "MS",
     stage: "group",
@@ -98,6 +99,8 @@ export default function CreateMatch() {
 
         court: form.court,
 
+        matchNumber: form.matchNumber,
+
         time: form.time,
 
         event: form.event,
@@ -146,7 +149,7 @@ export default function CreateMatch() {
   }
 
   return (
-    <div className="mx-auto max-w-md space-y-5 p-4">
+    <div className="mx-auto max-w-md space-y-5 p-4 mb-30">
       {/* Header */}
 
       <div>

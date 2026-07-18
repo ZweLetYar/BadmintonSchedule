@@ -6,7 +6,7 @@ import { db } from "../Firebase";
 export default function MatchCard({ match, playerMap = {} }) {
   const [saving, setSaving] = useState(false);
   const path = window.location.pathname;
-  const isAdmin = path.startsWith("/admin");
+  const isAdmin = path.startsWith("/serious");
   const {
     event,
     stage,

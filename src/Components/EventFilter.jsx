@@ -40,8 +40,10 @@ export default function EventFilter({ activeEvent, setActiveEvent }) {
         {events.map((event) => {
           const Icon = event.icon;
           let location = useLocation();
+
           const isStanding = location.pathname === "/results";
-          if (isStanding && event.id === "all") return null;
+          const isDraw = location.pathname === "/draw";
+          if ((isStanding || isDraw) && event.id === "all") return null;
           return (
             <button
               key={event.id}

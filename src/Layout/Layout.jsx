@@ -12,12 +12,14 @@ import EventFilter from "../Components/EventFilter";
 import { getTodayTournamentDay } from "../tournamentDays";
 import SchedulePage from "../Components/SchedulePage";
 import Result from "../pages/MainApp/Result";
+import Draw from "../pages/MainApp/Draw";
 
 export default function Layout({ children }) {
   let location = useLocation();
   const isHomePage = location.pathname === "/";
   const isResultPage = location.pathname === "/results";
   const isPlayersPage = location.pathname === "/players";
+  const isDrawPage = location.pathname === "/draw";
   const isAdmin = location.pathname.startsWith("/admin/view-matches");
 
   const [activeDay, setActiveDay] = useState(getTodayTournamentDay());
@@ -47,6 +49,9 @@ export default function Layout({ children }) {
 
       {isResultPage && (
         <Result activeEvent={activeEvent} setActiveEvent={setActiveEvent} />
+      )}
+      {isDrawPage && (
+        <Draw activeEvent={activeEvent} setActiveEvent={setActiveEvent} />
       )}
 
       <SwitchTransition>
