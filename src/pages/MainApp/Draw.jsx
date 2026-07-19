@@ -15,7 +15,7 @@ export default function Draw({ activeEvent, setActiveEvent }) {
   }, [activeEvent]);
 
   return (
-    <div className="mt-5 pb-28">
+    <div className="mt-3 pb-28">
       {imageError ? (
         <div className="mx-3 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
           <div className="text-lg font-semibold text-slate-700">
@@ -27,7 +27,7 @@ export default function Draw({ activeEvent, setActiveEvent }) {
         </div>
       ) : (
         <img
-          src={`${activeEvent}.png`}
+          src={`${activeEvent}.jpg`}
           alt={`${activeEvent} Bracket`}
           className="w-full"
           onError={() => setImageError(true)}

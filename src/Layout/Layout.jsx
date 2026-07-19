@@ -20,7 +20,7 @@ export default function Layout({ children }) {
   const isResultPage = location.pathname === "/results";
   const isPlayersPage = location.pathname === "/players";
   const isDrawPage = location.pathname === "/draw";
-  const isAdmin = location.pathname.startsWith("/admin/view-matches");
+  const isAdmin = location.pathname.startsWith("/serious/view-matches");
 
   const [activeDay, setActiveDay] = useState(getTodayTournamentDay());
   const [activeEvent, setActiveEvent] = useState("All");
