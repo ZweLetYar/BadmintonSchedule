@@ -1,7 +1,13 @@
 const STAGES = [
   { value: "group", label: "Group Stage" },
+  { value: "knockout_R16", label: "Knockout - R16" },
   { value: "knockout", label: "Knockout" },
-  { value: "R16", label: "R16" },
+  { value: "ubqf", label: "UB-QF" },
+  { value: "ubsf", label: "UB-SF" },
+  { value: "lbr1", label: "LB-R1" },
+  { value: "lbr2", label: "LB-R2" },
+  { value: "lbr3", label: "LB-R3" },
+
   { value: "quarter_final", label: "Quarter Final" },
   { value: "semi_final", label: "Semi Final" },
   { value: "upper_final", label: "Upper Final" },

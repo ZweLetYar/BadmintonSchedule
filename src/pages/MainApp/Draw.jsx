@@ -25,13 +25,23 @@ export default function Draw({ activeEvent, setActiveEvent }) {
             The {activeEvent} knockout bracket hasn't been published yet.
           </p>
         </div>
-      ) : (
+      ) : activeEvent === "MS" || activeEvent === "WS" ? (
         <img
           src={`${activeEvent}.jpg`}
           alt={`${activeEvent} Bracket`}
           className="w-full"
           onError={() => setImageError(true)}
         />
+      ) : (
+        <div className="mx-3 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-lg">
+          {/* Horizontal image with modern scrollbar */}
+          <img
+            src={`${activeEvent}.jpg`}
+            alt={`${activeEvent} Bracket`}
+            className="h-[600px] min-w-[800px]"
+            onError={() => setImageError(true)}
+          />
+        </div>
       )}
     </div>
   );

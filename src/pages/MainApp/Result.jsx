@@ -39,14 +39,17 @@ export default function Result({ activeEvent, setActiveEvent }) {
 
   return (
     <div className="mx-3 mt-2 mb-30 space-y-4">
-      {groups.map(({ group, standings }) => (
-        <GroupStanding
-          key={group}
-          event={activeEvent}
-          group={group}
-          standings={standings}
-        />
-      ))}
+      {groups.map(
+        ({ group, standings }) =>
+          group != "null" && (
+            <GroupStanding
+              key={group}
+              event={activeEvent}
+              group={group}
+              standings={standings}
+            />
+          ),
+      )}
 
       <div className="rounded-xl border border-slate-200 bg-white/70 p-3 shadow-sm backdrop-blur">
         <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
